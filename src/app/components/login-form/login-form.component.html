@@ -1,1 +1,29 @@
-<p>login-form works!</p>
+<div class="container d-flex align-items-center justify-content-center">
+	<form [formGroup]="form" class="mt-5 text-light bg-dark p-3">
+		<div class="mb-5">
+		  <label for="exampleInputEmail1" class="form-label">Email address</label>
+		  <input 
+		        type="email" 
+				class="form-control" 
+				required
+				formControlName="email">
+		</div>
+		<div *ngIf="invalidEmailControl" class="error-message">
+			Please enter your email
+		</div>
+		<div class="mb-5">
+		  <label for="exampleInputPassword1" class="form-label">Password</label>
+		  <input 
+		        type="password" 
+				class="form-control" 
+				required
+				formControlName="password">
+		</div>
+		<div *ngIf="invalidPasswordControl" class="error-message">
+			Please enter your password
+		</div>
+		<div class="container-btn text-center">
+			<button type="submit" class="btn btn-primary w-50" (click)="sendData()">Login</button>
+		</div>
+	</form>
+</div>
